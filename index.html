@@ -1,4 +1,183 @@
 
+<section id="jee-calendar">
+<style>
+#jee-calendar {
+  font-family: Arial,sans-serif;
+  background: #f0f5ff;
+  padding: 18px;
+  border-radius: 18px;
+  color: #172554;
+  max-width: 650px;
+  margin: 20px auto;
+}
+#jee-calendar h2 {text-align:center;color:#174ea6}
+#jee-calendar .jee-card {
+  background:white;padding:16px;margin:12px 0;
+  border-radius:13px;box-shadow:0 2px 8px #0001;
+}
+#jee-calendar .jee-count {
+  font-size:28px;font-weight:bold;color:#174ea6;
+  text-align:center;margin:15px 0;
+}
+#jee-calendar button {
+  background:#174ea6;color:white;border:0;
+  padding:11px 15px;border-radius:9px;
+  margin:5px;cursor:pointer;
+}
+#jee-calendar .jee-grid {
+  display:grid;grid-template-columns:repeat(7,1fr);
+  gap:5px;text-align:center;
+}
+#jee-calendar .jee-day {
+  background:#fff;padding:10px 2px;border-radius:7px;
+}
+#jee-calendar .jee-event {
+  background:#174ea6;color:white;font-weight:bold;
+}
+#jee-calendar .jee-head {font-weight:bold;padding:8px 0}
+#jee-calendar p {line-height:1.6}
+</style>
+
+<h2>🎓 JEE MAIN 2027</h2>
+<p style="text-align:center">Professional Exam Calendar</p>
+
+<div class="jee-card">
+<h3>⏳ Next Exam Countdown</h3>
+<div class="jee-count" id="jee-count">Loading...</div>
+<p id="jee-next" style="text-align:center"></p>
+</div>
+
+<div class="jee-card">
+<h3>📅 Exam Calendar</h3>
+<button onclick="showJEE(1)">January Session</button>
+<button onclick="showJEE(2)">April Session</button>
+<h3 id="jee-month"></h3>
+<div class="jee-grid" id="jee-days"></div>
+</div>
+
+<div class="jee-card">
+<h3>📝 Important Exam Dates</h3>
+<p><b>Session 1:</b> 20, 21, 22, 23, 24 & 28 January 2027</p>
+<p><b>Session 2:</b> 2, 3, 4, 5, 6 & 7 April 2027</p>
+<p><b>Admit Card:</b> Check official NTA notices.</p>
+</div>
+
+<div class="jee-card" style="text-align:center">
+<h3>🔔 Exam Reminder</h3>
+<p>Download the exam dates and add them to your phone calendar.</p>
+<button onclick="downloadJEE()">Add Reminder to Calendar</button>
+<p style="font-size:12px">Reminder notifications depend on your phone calendar settings.</p>
+</div>
+
+<div style="text-align:center;padding:10px">
+<a href="https://jeemain.nta.nic.in/"
+target="_blank" style="color:#174ea6;font-weight:bold">
+Official NTA Website ↗
+</a>
+</div>
+
+<script>
+const jeeDates = {
+  1: [20,21,22,23,24,28],
+  2: [2,3,4,5,6,7]
+};
+
+function showJEE(session) {
+  const month = session === 1 ? 0 : 3;
+  const year = 2027;
+  const names = ["January","April"];
+  document.getElementById("jee-month").textContent =
+    names[session-1] + " 2027";
+
+  const first = new Date(year,month,1).getDay();
+  const total = new Date(year,month+1,0).getDate();
+  let html = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+    .map(d=>`<div class="jee-head">${d}</div>`).join("");
+
+  for(let i=0;i<first;i++) html += "<div></div>";
+
+  for(let d=1;d<=total;d++) {
+    const event = jeeDates[session].includes(d);
+    html += `<div class="jee-day ${event?'jee-event':''}">${d}${event?' ★':''}</div>`;
+  }
+  document.getElementById("jee-days").innerHTML = html;
+}
+
+function updateJEE() {
+  const now = new Date();
+  const exams = [
+    new Date(2027,0,20,9),
+    new Date(2027,3,2,9)
+  ];
+  const next = exams.find(d=>d>now);
+  const count = document.getElementById("jee-count");
+
+  if(!next) {
+    count.textContent = "Exam dates passed";
+    document.getElementById("jee-next").textContent =
+      "Check NTA for new updates.";
+    return;
+  }
+
+  const diff = next-now;
+  const days = Math.floor(diff/86400000);
+  const hours = Math.floor(diff%86400000/3600000);
+  const mins = Math.floor(diff%3600000/60000);
+  const secs = Math.floor(diff%60000/1000);
+
+  count.textContent = `${days}d ${hours}h ${mins}m ${secs}s`;
+  document.getElementById("jee-next").textContent =
+    "Next exam: " + next.toLocaleDateString("en-IN",
+    {day:"numeric",month:"long",year:"numeric"});
+}
+
+function downloadJEE() {
+  const dates = [
+    [2027,1,20],[2027,1,21],[2027,1,22],
+    [2027,1,23],[2027,1,24],[2027,1,28],
+    [2027,4,2],[2027,4,3],[2027,4,4],
+    [2027,4,5],[2027,4,6],[2027,4,7]
+  ];
+
+  let events = "";
+  dates.forEach(([y,m,d])=>{
+    const date = `${y}${String(m).padStart(2,"0")}${String(d).padStart(2,"0")}`;
+    const next = new Date(y,m-1,d+1);
+    const end = `${next.getFullYear()}${String(next.getMonth()+1).padStart(2,"0")}${String(next.getDate()).padStart(2,"0")}`;
+    events += `BEGIN:VEVENT
+DTSTART;VALUE=DATE:${date}
+DTEND;VALUE=DATE:${end}
+SUMMARY:JEE Main 2027 Exam
+DESCRIPTION:Check your JEE Main admit card for shift and centre.
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:JEE Main exam tomorrow
+END:VALARM
+END:VEVENT
+`;
+  });
+
+  const ics = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sandip Garai//JEE Calendar//EN
+CALSCALE:GREGORIAN
+${events}END:VCALENDAR`;
+
+  const blob = new Blob([ics],{type:"text/calendar;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href=url;
+  a.download="JEE-Main-2027.ics";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+showJEE(1);
+updateJEE();
+setInterval(updateJEE,1000);
+</script>
+  </section>
 <!DOCTYPE html>
 <html lang="en">
 <head>
