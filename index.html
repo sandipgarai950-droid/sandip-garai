@@ -5,632 +5,258 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sandip Garai | Personal Website</title>
-
 <style>
 *{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#eef3ff;
-  color:#17233d;
-  text-align:center;
-}
-header{
-  padding:40px 15px;
-  color:white;
-  background:linear-gradient(135deg,#142b68,#3979e8);
-}
+body{margin:0;font-family:Arial,sans-serif;background:#eef3ff;color:#17233d;text-align:center}
+header{padding:40px 15px;color:white;background:linear-gradient(135deg,#142b68,#3979e8)}
 header h1{font-size:32px;margin:0}
-nav{
-  background:#10234f;
-  padding:14px 5px;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-nav a{
-  color:white;
-  text-decoration:none;
-  margin:5px 8px;
-  display:inline-block;
-  font-size:13px;
-}
-section{
-  background:white;
-  width:93%;
-  max-width:720px;
-  margin:20px auto;
-  padding:22px 14px;
-  border-radius:15px;
-  box-shadow:0 3px 14px #00000012;
-}
+nav{background:#10234f;padding:13px 5px;position:sticky;top:0;z-index:10}
+nav a{color:white;text-decoration:none;margin:5px 8px;display:inline-block;font-size:13px}
+section{background:white;width:93%;max-width:720px;margin:20px auto;padding:22px 14px;border-radius:15px;box-shadow:0 3px 14px #00000012}
 h2{color:#2458bd}
-.button{
-  display:inline-block;
-  background:#2458bd;
-  color:white;
-  text-decoration:none;
-  border:0;
-  padding:12px 17px;
-  margin:6px;
-  border-radius:9px;
-  cursor:pointer;
-  font-size:14px;
-}
-.green{background:#168b48}
-.purple{background:#7045bb}
-.orange{background:#e17b19}
-.red{background:#d83c49}
-.app-grid{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-#birthdayMessage{
-  color:#e04485;
-  font-size:23px;
-  font-weight:bold;
-}
-#countdown,#jeeCountdown{
-  font-size:22px;
-  font-weight:bold;
-  color:#168b48;
-  margin:15px;
-}
-input{
-  padding:10px;
-  border:1px solid #aaa;
-  border-radius:7px;
-}
-footer{
-  background:#10234f;
-  color:white;
-  padding:22px 10px;
-  line-height:1.8;
-}
-canvas{
-  display:block;
-  width:100%;
-  max-width:360px;
-  height:auto;
-  margin:12px auto;
-  background:linear-gradient(#e5f0ff,#f8fbff);
-  border:2px solid #b7c9ef;
-  border-radius:12px;
-  touch-action:manipulation;
-}
+.button{display:inline-block;background:#2458bd;color:white;text-decoration:none;border:0;padding:12px 17px;margin:6px;border-radius:9px;cursor:pointer;font-size:14px}
+.green{background:#168b48}.purple{background:#7045bb}.orange{background:#e17b19}.red{background:#d83c49}
+.app-grid{display:flex;flex-wrap:wrap;justify-content:center}
+input{padding:10px;border:1px solid #aaa;border-radius:7px}
+#jeeCountdown{font-size:22px;font-weight:bold;color:#168b48;margin:15px}
+canvas{display:block;width:100%;max-width:360px;height:auto;margin:12px auto;background:linear-gradient(#e5f0ff,#f8fbff);border:2px solid #b7c9ef;border-radius:12px;touch-action:manipulation}
 .game-info{font-weight:bold;color:#2458bd}
+footer{background:#10234f;color:white;padding:22px 10px;line-height:1.8}
 .small{font-size:13px;color:#667085}
 </style>
 </head>
-
 <body>
 
 <header>
-  <h1>Sandip Garai</h1>
-  <p>Welcome to My Personal Website</p>
-  <p>Student | JEE Main Aspirant</p>
+<h1>Sandip Garai</h1>
+<p>Welcome to My Personal Website</p>
+<p>Student | JEE Main Aspirant</p>
 </header>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#birthday">Birthday</a>
-  <a href="#jee">JEE Main</a>
-  <a href="#game">Game</a>
-  <a href="#apps">Apps</a>
-  <a href="#contact">Contact</a>
+<a href="#about">About</a>
+<a href="#jee">JEE Main</a>
+<a href="#game">Game</a>
+<a href="#apps">Apps</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <section id="about">
-  <h2>👨‍🎓 About Me</h2>
-  <h3>Sandip Garai</h3>
-  <p>Welcome to my personal website!</p>
-  <p>Student | JEE Main Aspirant</p>
-  <p><b>Date of Birth:</b> 18 November 2008</p>
-  <p>Learning, Technology and Education ❤️</p>
-</section>
-
-<section id="birthday">
-  <h2>🎂 Birthday Celebration</h2>
-  <p id="birthdayMessage">Birthday Countdown</p>
-  <div id="countdown"></div>
-  <p id="birthdayExtra"></p>
-
-  <button class="button purple" onclick="enableNotification()">
-    🔔 Enable Birthday Notification
-  </button>
-  <p class="small" id="notificationStatus">
-    Notification পেতে বাটনে ক্লিক করে অনুমতি দাও।
-  </p>
+<h2>👨‍🎓 About Me</h2>
+<h3>Sandip Garai</h3>
+<p>Welcome to my personal website!</p>
+<p>Student | JEE Main Aspirant</p>
+<p>Learning, Technology and Education ❤️</p>
 </section>
 
 <section id="jee">
-  <h2>📚 JEE Main Reminder</h2>
-  <p>তোমার পরীক্ষার তারিখ নির্বাচন করো:</p>
-  <input type="date" id="jeeDate">
-  <br>
-  <button class="button" onclick="saveJeeDate()">Save Exam Date</button>
-  <div id="jeeCountdown">Select your exam date</div>
-
-  <a class="button orange"
-     href="https://jeemain.nta.nic.in/" target="_blank">
-    JEE Main Official Website
-  </a>
-  <a class="button"
-     href="https://nta.ac.in/" target="_blank">
-    NTA Website
-  </a>
+<h2>📚 JEE Main Reminder</h2>
+<p>তোমার পরীক্ষার তারিখ নির্বাচন করো:</p>
+<input type="date" id="jeeDate">
+<br>
+<button class="button" onclick="saveJeeDate()">Save Exam Date</button>
+<div id="jeeCountdown">Select your exam date</div>
+<a class="button orange" href="https://jeemain.nta.nic.in/" target="_blank">JEE Main Official Website</a>
+<a class="button" href="https://nta.ac.in/" target="_blank">NTA Website</a>
 </section>
 
 <section id="game">
-  <h2>🎮 Bubble Shooter Game</h2>
-  <p>বুদবুদগুলোর দিকে লক্ষ্য করে ক্লিক করো। একই রঙের ৩টি বা তার বেশি মিললে সেগুলো মুছে যাবে!</p>
-
-  <div class="game-info">
-    Score: <span id="score">0</span>
-  </div>
-
-  <canvas id="gameCanvas" width="360" height="520"></canvas>
-
-  <button class="button green" onclick="restartGame()">
-    🔄 Restart Game
-  </button>
-  <p class="small">মোবাইলে স্ক্রিনে যেখানে বুদবুদ মারতে চাও সেখানে ট্যাপ করো।</p>
+<h2>🎮 Bubble Shooter Game</h2>
+<p>একই রঙের ৩টি বা তার বেশি Bubble মিলিয়ে পয়েন্ট অর্জন করো!</p>
+<div class="game-info">Score: <span id="score">0</span></div>
+<canvas id="gameCanvas" width="360" height="520"></canvas>
+<button class="button green" onclick="restartGame()">🔄 Restart Game</button>
+<p class="small">মোবাইলে যেখানে Bubble মারতে চাও সেখানে ট্যাপ করো।</p>
 </section>
 
 <section id="apps">
-  <h2>🌐 My Favourite Apps</h2>
-  <div class="app-grid">
-    <a class="button" href="https://www.google.com/" target="_blank">Google</a>
-    <a class="button red" href="https://www.youtube.com/" target="_blank">YouTube</a>
-    <a class="button green" href="https://gemini.google.com/" target="_blank">Gemini</a>
-    <a class="button purple" href="https://chatgpt.com/" target="_blank">ChatGPT</a>
-    <a class="button orange" href="https://aistudio.google.com/" target="_blank">Google AI</a>
-  </div>
+<h2>🌐 My Favourite Apps</h2>
+<div class="app-grid">
+<a class="button" href="https://www.google.com/" target="_blank">Google</a>
+<a class="button red" href="https://www.youtube.com/" target="_blank">YouTube</a>
+<a class="button green" href="https://gemini.google.com/" target="_blank">Gemini</a>
+<a class="button purple" href="https://chatgpt.com/" target="_blank">ChatGPT</a>
+<a class="button orange" href="https://aistudio.google.com/" target="_blank">Google AI</a>
+</div>
 </section>
 
 <section id="contact">
-  <h2>📞 Contact Me</h2>
-  <p>নিচের বাটনে ক্লিক করে যোগাযোগ করো।</p>
-
-  <a class="button" href="tel:+917679844359">📞 Call Now</a>
-
-  <a class="button orange" href="sms:+917679844359">
-    ✉️ Send SMS
-  </a>
-
-  <a class="button green"
-     href="https://wa.me/917679844359" target="_blank">
-    WhatsApp Chat
-  </a>
-
-  <a class="button purple"
-     href="https://t.me/+917679844359" target="_blank">
-    Telegram Message
-  </a>
-
-  <a class="button red"
-     href="mailto:sandipgarai950@gmail.com">
-    📧 Send Email
-  </a>
+<h2>📞 Contact Me</h2>
+<p>নিচের বাটনে ক্লিক করে যোগাযোগ করো।</p>
+<a class="button" href="tel:+917679844359">📞 Call Now</a>
+<a class="button orange" href="sms:+917679844359">✉️ Send SMS</a>
+<a class="button green" href="https://wa.me/917679844359" target="_blank">WhatsApp Chat</a>
+<a class="button purple" href="https://t.me/+917679844359" target="_blank">Telegram Message</a>
+<a class="button red" href="mailto:sandipgarai950@gmail.com">📧 Send Email</a>
 </section>
 
 <footer>
-  © 2026 Sandip Garai. All Rights Reserved.<br>
-  Designed with ❤️ by Sandip Garai
+© 2026 Sandip Garai. All Rights Reserved.<br>
+Designed with ❤️ by Sandip Garai
 </footer>
 
 <script>
-// BIRTHDAY COUNTDOWN
-function updateBirthday(){
-  const now = new Date();
-  const month = 10;
-  const day = 18;
-
-  const birthdayToday =
-    now.getMonth() === month && now.getDate() === day;
-
-  const message = document.getElementById("birthdayMessage");
-  const countdown = document.getElementById("countdown");
-  const extra = document.getElementById("birthdayExtra");
-
-  if(birthdayToday){
-    message.innerHTML = "🎉 Happy Birthday Sandip Garai! 🎂";
-    countdown.innerHTML = "আজ তোমার জন্মদিন!";
-    extra.innerHTML = "তোমার জীবন আনন্দ ও সাফল্যে ভরে উঠুক! ❤️";
-    sendBirthdayNotification();
-  }else{
-    let next = new Date(now.getFullYear(),month,day);
-    if(now > next){
-      next = new Date(now.getFullYear()+1,month,day);
-    }
-    const days = Math.ceil((next-now)/86400000);
-    message.innerHTML = "🎂 Birthday Countdown";
-    countdown.innerHTML = days + " Days Left!";
-    extra.innerHTML = "১৮ নভেম্বর তোমার জন্মদিন।";
-  }
-}
-
-async function enableNotification(){
-  const status = document.getElementById("notificationStatus");
-
-  if(!("Notification" in window)){
-    status.innerText = "এই ব্রাউজারে Notification পাওয়া যাচ্ছে না।";
-    return;
-  }
-
-  const permission = await Notification.requestPermission();
-
-  if(permission === "granted"){
-    status.innerText = "Birthday Notification Enabled!";
-    sendBirthdayNotification();
-  }else{
-    status.innerText = "Browser settings থেকে Notification allow করো।";
-  }
-}
-
-function sendBirthdayNotification(){
-  if(!("Notification" in window)) return;
-  if(Notification.permission !== "granted") return;
-
-  const todayKey =
-    "birthday-" + new Date().getFullYear();
-
-  if(localStorage.getItem(todayKey)) return;
-
-  new Notification("Happy Birthday Sandip Garai! 🎂",{
-    body:"শুভ জন্মদিন! তোমার দিনটি সুন্দর কাটুক। ❤️"
-  });
-
-  localStorage.setItem(todayKey,"sent");
-}
-
 // JEE MAIN COUNTDOWN
 function saveJeeDate(){
-  const date = document.getElementById("jeeDate").value;
-  if(!date){
-    alert("প্রথমে পরীক্ষার তারিখ নির্বাচন করো।");
-    return;
-  }
-  localStorage.setItem("sandipJeeDate",date);
-  updateJeeCountdown();
+const date=document.getElementById("jeeDate").value;
+if(!date){alert("প্রথমে পরীক্ষার তারিখ নির্বাচন করো।");return;}
+localStorage.setItem("sandipJeeDate",date);
+updateJeeCountdown();
 }
-
 function updateJeeCountdown(){
-  const saved = localStorage.getItem("sandipJeeDate");
-  const output = document.getElementById("jeeCountdown");
-
-  if(!saved){
-    output.innerText = "Select your exam date";
-    return;
-  }
-
-  document.getElementById("jeeDate").value = saved;
-
-  const exam = new Date(saved+"T00:00:00");
-  const today = new Date();
-  today.setHours(0,0,0,0);
-
-  const days = Math.ceil((exam-today)/86400000);
-
-  if(days > 0) output.innerText = days+" Days Left for JEE Main!";
-  else if(days === 0) output.innerText = "Today is your exam date!";
-  else output.innerText = "Exam date has passed.";
+const saved=localStorage.getItem("sandipJeeDate");
+const output=document.getElementById("jeeCountdown");
+if(!saved){output.innerText="Select your exam date";return;}
+document.getElementById("jeeDate").value=saved;
+const exam=new Date(saved+"T00:00:00");
+const today=new Date();today.setHours(0,0,0,0);
+const days=Math.ceil((exam-today)/86400000);
+if(days>0)output.innerText=days+" Days Left for JEE Main!";
+else if(days===0)output.innerText="Today is your exam date!";
+else output.innerText="Exam date has passed.";
 }
 
-// BUBBLE SHOOTER GAME
-const canvas = document.getElementById("gameCanvas");
-const ctx = canvas.getContext("2d");
+// BUBBLE SHOOTER
+const canvas=document.getElementById("gameCanvas");
+const ctx=canvas.getContext("2d");
+const colors=["#ef4444","#3b82f6","#22c55e","#f59e0b","#a855f7"];
+const cols=8,rows=10,radius=17,gap=44,startX=24,startY=28;
+let board=[],score=0,shooterColor,moving=null,aimX=180,aimY=150,gameOver=false;
 
-const colors = ["#ef4444","#3b82f6","#22c55e","#f59e0b","#a855f7"];
-const cols = 8;
-const rows = 10;
-const radius = 17;
-const gap = 44;
-const startX = 24;
-const startY = 28;
-
-let board = [];
-let score = 0;
-let shooterColor;
-let moving = null;
-let aimX = 180;
-let aimY = 150;
-let gameOver = false;
-
-function center(c,r){
-  return {
-    x:startX+c*gap,
-    y:startY+r*gap
-  };
-}
-
-function randomColor(){
-  return colors[Math.floor(Math.random()*colors.length)];
-}
-
-function restartGame(){
-  board = [];
-  score = 0;
-  gameOver = false;
-  moving = null;
-
-  for(let r=0;r<rows;r++){
-    board[r]=[];
-    for(let c=0;c<cols;c++){
-      board[r][c] = r < 5 ? randomColor() : null;
-    }
-  }
-
-  shooterColor = randomColor();
-  document.getElementById("score").innerText = score;
-  drawGame();
-}
+function center(c,r){return{x:startX+c*gap,y:startY+r*gap};}
+function randomColor(){return colors[Math.floor(Math.random()*colors.length)];}
 
 function drawBubble(x,y,color,r=radius){
-  ctx.beginPath();
-  ctx.arc(x,y,r,0,Math.PI*2);
-  ctx.fillStyle=color;
-  ctx.fill();
-  ctx.strokeStyle="#ffffff";
-  ctx.lineWidth=2;
-  ctx.stroke();
-
-  ctx.beginPath();
-  ctx.arc(x-5,y-6,4,0,Math.PI*2);
-  ctx.fillStyle="#ffffff88";
-  ctx.fill();
+ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);
+ctx.fillStyle=color;ctx.fill();
+ctx.strokeStyle="white";ctx.lineWidth=2;ctx.stroke();
+ctx.beginPath();ctx.arc(x-5,y-6,4,0,Math.PI*2);
+ctx.fillStyle="#ffffff88";ctx.fill();
 }
 
 function drawGame(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-
-  for(let r=0;r<rows;r++){
-    for(let c=0;c<cols;c++){
-      if(board[r] && board[r][c]){
-        const p=center(c,r);
-        drawBubble(p.x,p.y,board[r][c]);
-      }
-    }
-  }
-
-  // Aim line
-  if(!moving && !gameOver){
-    const sx=180, sy=478;
-    const dx=aimX-sx, dy=aimY-sy;
-    const len=Math.sqrt(dx*dx+dy*dy)||1;
-
-    ctx.beginPath();
-    ctx.moveTo(sx,sy);
-    ctx.lineTo(sx+(dx/len)*120,sy+(dy/len)*120);
-    ctx.strokeStyle="#64748b";
-    ctx.setLineDash([5,5]);
-    ctx.stroke();
-    ctx.setLineDash([]);
-  }
-
-  drawBubble(180,478,shooterColor,18);
-
-  if(moving){
-    drawBubble(moving.x,moving.y,moving.color);
-  }
-
-  if(gameOver){
-    ctx.fillStyle="#17233d";
-    ctx.font="bold 25px Arial";
-    ctx.textAlign="center";
-    ctx.fillText("GAME OVER",180,260);
-    ctx.font="16px Arial";
-    ctx.fillText("Press Restart Game",180,290);
-  }
+ctx.clearRect(0,0,360,520);
+for(let r=0;r<rows;r++){
+for(let c=0;c<cols;c++){
+if(board[r]&&board[r][c]){
+const p=center(c,r);drawBubble(p.x,p.y,board[r][c]);
+}}}
+if(!moving&&!gameOver){
+const dx=aimX-180,dy=aimY-478,len=Math.hypot(dx,dy)||1;
+ctx.beginPath();ctx.moveTo(180,478);
+ctx.lineTo(180+dx/len*120,478+dy/len*120);
+ctx.strokeStyle="#64748b";ctx.setLineDash([5,5]);ctx.stroke();ctx.setLineDash([]);
+}
+drawBubble(180,478,shooterColor,18);
+if(moving)drawBubble(moving.x,moving.y,moving.color);
+if(gameOver){
+ctx.fillStyle="#17233d";ctx.font="bold 25px Arial";ctx.textAlign="center";
+ctx.fillText("GAME OVER",180,260);
+}
 }
 
-function getPointer(event){
-  const rect=canvas.getBoundingClientRect();
-  const scaleX=canvas.width/rect.width;
-  const scaleY=canvas.height/rect.height;
-
-  return {
-    x:(event.clientX-rect.left)*scaleX,
-    y:(event.clientY-rect.top)*scaleY
-  };
+function restartGame(){
+board=[];score=0;gameOver=false;moving=null;
+for(let r=0;r<rows;r++){
+board[r]=[];
+for(let c=0;c<cols;c++)board[r][c]=r<5?randomColor():null;
+}
+shooterColor=randomColor();
+document.getElementById("score").innerText=score;
+drawGame();
 }
 
-canvas.addEventListener("pointermove",function(e){
-  const p=getPointer(e);
-  aimX=p.x;
-  aimY=Math.min(p.y,440);
-  if(!moving) drawGame();
+function getPointer(e){
+const rect=canvas.getBoundingClientRect();
+return{x:(e.clientX-rect.left)*360/rect.width,y:(e.clientY-rect.top)*520/rect.height};
+}
+
+canvas.addEventListener("pointermove",e=>{
+const p=getPointer(e);aimX=p.x;aimY=Math.min(p.y,440);
+if(!moving)drawGame();
 });
 
-canvas.addEventListener("pointerdown",function(e){
-  if(gameOver || moving) return;
-
-  const p=getPointer(e);
-  aimX=p.x;
-  aimY=Math.min(p.y,440);
-
-  const dx=aimX-180;
-  const dy=aimY-478;
-  if(dy>=-10) return;
-
-  const length=Math.sqrt(dx*dx+dy*dy)||1;
-
-  moving={
-    x:180,
-    y:478,
-    vx:(dx/length)*7,
-    vy:(dy/length)*7,
-    color:shooterColor
-  };
-
-  shooterColor=randomColor();
-  animateShot();
+canvas.addEventListener("pointerdown",e=>{
+if(gameOver||moving)return;
+const p=getPointer(e);aimX=p.x;aimY=Math.min(p.y,440);
+const dx=aimX-180,dy=aimY-478;
+if(dy>=-10)return;
+const len=Math.hypot(dx,dy)||1;
+moving={x:180,y:478,vx:dx/len*7,vy:dy/len*7,color:shooterColor};
+shooterColor=randomColor();animateShot();
 });
 
 function animateShot(){
-  if(!moving) return;
-
-  moving.x+=moving.vx;
-  moving.y+=moving.vy;
-
-  if(moving.x<radius || moving.x>canvas.width-radius){
-    moving.vx*=-1;
-  }
-
-  let hit=false;
-
-  if(moving.y<radius+5) hit=true;
-
-  for(let r=0;r<rows && !hit;r++){
-    for(let c=0;c<cols;c++){
-      if(board[r][c]){
-        const p=center(c,r);
-        const d=Math.hypot(moving.x-p.x,moving.y-p.y);
-        if(d<radius*2-2){
-          hit=true;
-          break;
-        }
-      }
-    }
-  }
-
-  if(hit){
-    placeBubble();
-    return;
-  }
-
-  drawGame();
-  requestAnimationFrame(animateShot);
-}
-
-function placeBubble(){
-  let best=null;
-  let bestDistance=Infinity;
-
-  for(let r=0;r<rows;r++){
-    for(let c=0;c<cols;c++){
-      if(!board[r][c]){
-        const p=center(c,r);
-        const d=Math.hypot(moving.x-p.x,moving.y-p.y);
-        if(d<bestDistance){
-          bestDistance=d;
-          best={r,c};
-        }
-      }
-    }
-  }
-
-  if(best){
-    board[best.r][best.c]=moving.color;
-    const cluster=findCluster(best.r,best.c);
-
-    if(cluster.length>=3){
-      cluster.forEach(cell=>{
-        board[cell.r][cell.c]=null;
-      });
-      score+=cluster.length*10;
-      document.getElementById("score").innerText=score;
-      removeFloatingBubbles();
-    }
-
-    checkGameOver();
-  }
-
-  moving=null;
-  drawGame();
+if(!moving)return;
+moving.x+=moving.vx;moving.y+=moving.vy;
+if(moving.x<radius||moving.x>360-radius)moving.vx*=-1;
+let hit=moving.y<radius+5;
+for(let r=0;r<rows&&!hit;r++){
+for(let c=0;c<cols;c++){
+if(board[r][c]){
+const p=center(c,r);
+if(Math.hypot(moving.x-p.x,moving.y-p.y)<radius*2-2){hit=true;break;}
+}}}
+if(hit){placeBubble();return;}
+drawGame();requestAnimationFrame(animateShot);
 }
 
 function findCluster(r,c){
-  const color=board[r][c];
-  if(!color) return [];
-
-  const stack=[{r,c}];
-  const visited=new Set([r+","+c]);
-  const result=[];
-  const directions=[
-    [1,0],[-1,0],[0,1],[0,-1]
-  ];
-
-  while(stack.length){
-    const cell=stack.pop();
-    result.push(cell);
-
-    for(const [dr,dc] of directions){
-      const nr=cell.r+dr;
-      const nc=cell.c+dc;
-      const key=nr+","+nc;
-
-      if(nr>=0 && nr<rows && nc>=0 && nc<cols &&
-         !visited.has(key) && board[nr][nc]===color){
-        visited.add(key);
-        stack.push({r:nr,c:nc});
-      }
-    }
-  }
-  return result;
+const color=board[r][c];if(!color)return[];
+const stack=[{r,c}],visited=new Set([r+","+c]),result=[];
+while(stack.length){
+const cell=stack.pop();result.push(cell);
+for(const [dr,dc] of [[1,0],[-1,0],[0,1],[0,-1]]){
+const nr=cell.r+dr,nc=cell.c+dc,key=nr+","+nc;
+if(nr>=0&&nr<rows&&nc>=0&&nc<cols&&!visited.has(key)&&board[nr][nc]===color){
+visited.add(key);stack.push({r:nr,c:nc});
+}}}
+return result;
 }
 
-function removeFloatingBubbles(){
-  const connected=new Set();
-  const stack=[];
-
-  for(let c=0;c<cols;c++){
-    if(board[0][c]){
-      stack.push({r:0,c});
-      connected.add("0,"+c);
-    }
-  }
-
-  const dirs=[[1,0],[-1,0],[0,1],[0,-1]];
-
-  while(stack.length){
-    const cell=stack.pop();
-
-    for(const [dr,dc] of dirs){
-      const nr=cell.r+dr;
-      const nc=cell.c+dc;
-      const key=nr+","+nc;
-
-      if(nr>=0 && nr<rows && nc>=0 && nc<cols &&
-         board[nr][nc] && !connected.has(key)){
-        connected.add(key);
-        stack.push({r:nr,c:nc});
-      }
-    }
-  }
-
-  for(let r=0;r<rows;r++){
-    for(let c=0;c<cols;c++){
-      if(board[r][c] && !connected.has(r+","+c)){
-        board[r][c]=null;
-        score+=5;
-      }
-    }
-  }
-
-  document.getElementById("score").innerText=score;
+function removeFloating(){
+const connected=new Set(),stack=[];
+for(let c=0;c<cols;c++)if(board[0][c]){stack.push({r:0,c});connected.add("0,"+c);}
+while(stack.length){
+const cell=stack.pop();
+for(const [dr,dc] of [[1,0],[-1,0],[0,1],[0,-1]]){
+const nr=cell.r+dr,nc=cell.c+dc,key=nr+","+nc;
+if(nr>=0&&nr<rows&&nc>=0&&nc<cols&&board[nr][nc]&&!connected.has(key)){
+connected.add(key);stack.push({r:nr,c:nc});
+}}}
+for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+if(board[r][c]&&!connected.has(r+","+c)){board[r][c]=null;score+=5;}
+}
 }
 
-function checkGameOver(){
-  for(let r=0;r<rows;r++){
-    for(let c=0;c<cols;c++){
-      if(board[r][c] && center(c,r).y>405){
-        gameOver=true;
-        return;
-      }
-    }
-  }
+function placeBubble(){
+let best=null,bestDistance=Infinity;
+for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+if(!board[r][c]){
+const p=center(c,r),d=Math.hypot(moving.x-p.x,moving.y-p.y);
+if(d<bestDistance){bestDistance=d;best={r,c};}
+}}
+if(best){
+board[best.r][best.c]=moving.color;
+const cluster=findCluster(best.r,best.c);
+if(cluster.length>=3){
+cluster.forEach(cell=>board[cell.r][cell.c]=null);
+score+=cluster.length*10;
+removeFloating();
+}
+document.getElementById("score").innerText=score;
+}
+moving=null;
+for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+if(board[r][c]&&center(c,r).y>405)gameOver=true;
+}
+drawGame();
 }
 
 restartGame();
-updateBirthday();
 updateJeeCountdown();
-
-setInterval(updateBirthday,60000);
 setInterval(updateJeeCountdown,60000);
 </script>
 
 </body>
-  </html>
-  
+</html>
